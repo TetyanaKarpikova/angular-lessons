@@ -1,0 +1,4 @@
+<div *ngFor="let itemUser of users">
+    <app-user [user]="itemUser"></app-user>
+    <app-address [address]="itemUser.address"></app-address>
+</div>
