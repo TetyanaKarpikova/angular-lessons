@@ -1,0 +1,3 @@
+<div *ngFor="let item of posts" >
+    <app-post *ngIf="item.userId === idUser.id" [post]="item"></app-post>
+</div>

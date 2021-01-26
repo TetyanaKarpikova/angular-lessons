@@ -1,0 +1,5 @@
+<app-user *ngFor="let item of users" [user]="item" (bubbleUpUser)="getBubbleUser($event)"></app-user>
+
+<div>
+   <app-posts [posts]="chosenPost" [idUser]="chosenUser"></app-posts>
+</div>
