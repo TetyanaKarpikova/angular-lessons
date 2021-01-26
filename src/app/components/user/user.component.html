@@ -1,0 +1,12 @@
+<div [class.target]="user.status" >
+{{user.id}}
+{{user.name}}
+{{user.age}}
+{{user.status}}
+{{user.address.city}}
+{{user.address.street}}
+{{user.address.number}}
+<a [routerLink]="[user.id]">info</a>
+</div>
+<hr/>
+
