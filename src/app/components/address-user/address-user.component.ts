@@ -1,6 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Users } from 'src/app/models/users';
 import { __values } from 'tslib';
 
 @Component({
@@ -10,16 +9,15 @@ import { __values } from 'tslib';
 })
 export class AddressUserComponent implements OnInit {
 
-  @Input()
-  address: any[];  
+  data: number; 
 
   constructor(private activateRoute: ActivatedRoute) {
-    this.activateRoute.params.subscribe(value => value)
-         
+    this.activateRoute.params.subscribe(value => this.data = value.id)
+       
    }
 
   ngOnInit(): void {
-     console.log(this.address) ;
+    
   }
 
 }

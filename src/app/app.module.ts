@@ -25,6 +25,7 @@ import { AddressUserComponent } from './components/address-user/address-user.com
     {
       path: 'link/users', component : UsersComponent, children: [
         {path:':id', component: AddressUserComponent
+        // {path:':id', component: AddressUserComponent
       }]
     }
   ])
