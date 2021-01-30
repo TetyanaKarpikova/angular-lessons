@@ -3,10 +3,10 @@
 {{user.name}}
 {{user.age}}
 {{user.status}}
-{{user.address.city}}
+<!-- {{user.address.city}}
 {{user.address.street}}
-{{user.address.number}}
-<a [routerLink]="[user.id]">info</a>
+{{user.address.number}} -->
+<a [routerLink]="[user.id]" [state]="user">info</a>
 
 </div>
 <hr/>
