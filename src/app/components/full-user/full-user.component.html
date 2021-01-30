@@ -1,0 +1,11 @@
+<div>
+    <h2>{{fullUser?.name}}</h2>
+    <div [class]="['direction']">
+        <div>Name: {{fullUser?.username}}</div>
+        <div>Email: {{fullUser?.email}}</div>
+        <div>Phone: {{fullUser?.phone}}</div>
+    </div>
+    <button (click)="readPosts()">posts</button>
+</div>
+
+<router-outlet></router-outlet>
