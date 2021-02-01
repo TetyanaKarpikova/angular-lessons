@@ -17,18 +17,24 @@ export class PostsComponent implements OnInit {
   @Input()
   userId: number;
 
-  constructor(private activatedRoute: ActivatedRoute, private router: Router
-      , private postService: PostService) {
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private router: Router,
+    private postService: PostService) {
    
     this.activatedRoute.params.subscribe(value => {
-     this.userId = this.router.getCurrentNavigation().extras.state.id})
-          
-    }
+      this.userId = this.router.getCurrentNavigation().extras.state.id
+    });
+
+    this.postService.getPost().subscribe( value =>  {
+      this.posts = value.filter(val => val.userId === this.userId
+    )});  
     
-    ngOnInit(): void{
-      this.postService.getPost().subscribe( value =>  {this.posts = value})
-        //console.log(value)))
-      console.log(this.posts)
+  }
+
+    
+    ngOnInit(): void{        
+      
   }
 
 }

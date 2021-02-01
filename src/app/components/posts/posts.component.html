@@ -1,1 +1,4 @@
-<p>posts work</p>
+<div *ngFor="let item of posts">
+   <app-post [post]="item">      
+   </app-post>
+</div>

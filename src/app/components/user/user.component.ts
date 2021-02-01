@@ -11,7 +11,9 @@ export class UserComponent implements OnInit {
   @Input()
   user: User;
 
-  constructor(private router: Router, private activatedRoute: ActivatedRoute) {
+  constructor(
+    private router: Router, 
+    private activatedRoute: ActivatedRoute) {
    
   }
 
