@@ -1,0 +1,41 @@
+<form [formGroup]="myForm" (ngSubmit)="action()">
+
+    <div>
+        <input [(formControl)]="name">
+        <div *ngIf="name.errors?.required" [classList]="['warning']">
+            this is required input
+        </div>
+        <div *ngIf="!!name.errors?.minlength" [class.warning]="!!name.errors?.minlength">
+            min length - {{name.errors?.minlength?.requiredLength }}
+            actual length - {{name.errors?.minlength?.actualLength}}
+        </div>
+    </div>
+
+    <div>
+        <input [formControl]="age">
+        <div *ngIf="age.errors?.required" [class.warning]="!!name.errors?.required">
+            this is required input</div>
+        <div *ngIf="age.errors?.notAge" [class]="['warning']">
+            not normal age</div>
+    </div>
+    <div>
+
+        <input [formControl]="phone">
+        <div *ngIf="phone.errors?.required" [class]="['warning']">
+            this is required input</div>
+        <div *ngIf="!!phone.errors?.minlength" [class]="['warning']">
+            min length - {{phone.errors?.minlength?.requiredLength}}
+            actual length - {{phone.errors?.minlength?.actualLength}}</div>
+        <div *ngIf="!!phone.errors?.maxlength" [class]="['warning']">
+            max length - {{phone.errors?.maxlength?.requiredLength}}
+            actual length - {{phone.errors?.maxlength?.actualLength}}</div>
+    </div>
+    <div>
+        <button [disabled]="myForm.invalid" (click)="checkInput()">save</button>
+    </div>
+</form>
+
+
+<app-user *ngFor="let item of user" [user]="item">
+   <p></p>
+</app-user>
