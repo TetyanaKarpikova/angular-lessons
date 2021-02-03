@@ -1,0 +1,6 @@
+<div>
+    {{post?.id}}
+    {{post?.title}} - <a [routerLink]="[post.id]" [state]="post">read post</a>
+</div>
+
+<router-outlet></router-outlet>

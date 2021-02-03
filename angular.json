@@ -120,5 +120,8 @@
       }
     }
   },
-  "defaultProject": "angular-lessons"
+  "defaultProject": "angular-lessons",
+  "cli": {
+    "analytics": false
+  }
 }
