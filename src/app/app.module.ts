@@ -10,8 +10,7 @@ import { RouterModule } from '@angular/router';
     AppComponent
   ],
   imports: [
-    BrowserModule,
-    // UserModule,
+    BrowserModule,    
     RouterModule.forRoot([{
       path: 'users', loadChildren: () => import('./user/user.module').then(m => m.UserModule)
     }, 

@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { User } from '../../model/User';
 
 @Component({
   selector: 'app-full-user',
@@ -8,16 +9,17 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class FullUserComponent implements OnInit {
 
-  userData: any;
+  userData: User;
 
   constructor(private activetedRouter: ActivatedRoute) {
     this.activetedRouter.params.subscribe(value => {
       this.userData = history.state
+
     })
   }
 
   ngOnInit(): void {
-    console.log('fullr user')
+
   }
 
 }

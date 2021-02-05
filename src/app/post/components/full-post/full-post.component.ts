@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Post } from '../../model/Post';
 
 @Component({
   selector: 'app-full-post',
@@ -8,20 +9,19 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class FullPostComponent implements OnInit {
    
-  post: any;
+  post: Post;
 
   constructor(
     private activetedRoute: ActivatedRoute,
     private router: Router) 
     { 
       this.activetedRoute.params.subscribe(value => {        
-       this.post = (this.router.getCurrentNavigation().extras.state)
-      })
-      console.log(this.post)
+       this.post = (this.router.getCurrentNavigation().extras.state) as Post;
+      })     
   }
 
   ngOnInit(): void {
-    console.log('full post')
+    
   }
 
 }
