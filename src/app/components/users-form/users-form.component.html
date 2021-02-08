@@ -1,32 +1,40 @@
 <form [formGroup]="myForm" (ngSubmit)="action()">
 
     <div>
-        <input [(formControl)]="name">
-        <div *ngIf="name.errors?.required" [classList]="['warning']">
+        <label>
+            First name:
+            <input [(formControl)]="name">
+        </label>
+        <div *ngIf="name.errors?.required" [class]="['warning', 'margin80']">
             this is required input
         </div>
-        <div *ngIf="!!name.errors?.minlength" [class.warning]="!!name.errors?.minlength">
+        <div *ngIf="!!name.errors?.minlength" [class]="['warning', 'margin80']">
             min length - {{name.errors?.minlength?.requiredLength }}
             actual length - {{name.errors?.minlength?.actualLength}}
         </div>
     </div>
 
     <div>
-        <input [formControl]="age">
-        <div *ngIf="age.errors?.required" [class.warning]="!!name.errors?.required">
+        <label>
+            Age:
+            <input [formControl]="age" type="number">
+        </label>
+        <div *ngIf="age.errors?.required" [class]="['warning', 'margin40']">
             this is required input</div>
-        <div *ngIf="age.errors?.notAge" [class]="['warning']">
+        <div *ngIf="age.errors?.notAge" [class]="['warning', 'margin40']">
             not normal age</div>
     </div>
     <div>
-
-        <input [formControl]="phone">
-        <div *ngIf="phone.errors?.required" [class]="['warning']">
+        <label>
+            Phone number:
+            <input [formControl]="phone">
+        </label>
+        <div *ngIf="phone.errors?.required" [class]="['warning', 'margin100']">
             this is required input</div>
-        <div *ngIf="!!phone.errors?.minlength" [class]="['warning']">
+        <div *ngIf="!!phone.errors?.minlength" [class]="['warning', 'margin100']">
             min length - {{phone.errors?.minlength?.requiredLength}}
             actual length - {{phone.errors?.minlength?.actualLength}}</div>
-        <div *ngIf="!!phone.errors?.maxlength" [class]="['warning']">
+        <div *ngIf="!!phone.errors?.maxlength" [class]="['warning', 'margin100']">
             max length - {{phone.errors?.maxlength?.requiredLength}}
             actual length - {{phone.errors?.maxlength?.actualLength}}</div>
     </div>
@@ -35,7 +43,7 @@
     </div>
 </form>
 
-
+<p></p>
 <app-user *ngFor="let item of user" [user]="item">
-   <p></p>
+    <p></p>
 </app-user>

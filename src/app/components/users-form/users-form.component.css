@@ -1,3 +1,12 @@
 .warning {
     color: tomato;
 }
+.margin100 {
+    margin-left: 100px;
+}
+.margin80 {
+    margin-left: 80px;
+}
+.margin40 {
+    margin-left: 40px;
+}
